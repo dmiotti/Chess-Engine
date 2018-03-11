@@ -15,6 +15,7 @@
 		58D2AFA3205588C700435152 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9F205588C700435152 /* Tile.swift */; };
 		58D2AFA52055899D00435152 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA42055899D00435152 /* Knight.swift */; };
 		58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA620558DC000435152 /* BoardUtils.swift */; };
+		58D2AFA92055978800435152 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA82055978800435152 /* Bishop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		58D2AF9F205588C700435152 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		58D2AFA42055899D00435152 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
 		58D2AFA620558DC000435152 /* BoardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUtils.swift; sourceTree = "<group>"; };
+		58D2AFA82055978800435152 /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				58D2AF9B205588C700435152 /* Piece.swift */,
 				58D2AFA42055899D00435152 /* Knight.swift */,
+				58D2AFA82055978800435152 /* Bishop.swift */,
 			);
 			path = Pieces;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				58D2AFA2205588C700435152 /* Board.swift in Sources */,
 				58D2AFA3205588C700435152 /* Tile.swift in Sources */,
 				58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */,
+				58D2AFA92055978800435152 /* Bishop.swift in Sources */,
 				58D2AF9320557EDD00435152 /* ConsoleIO.swift in Sources */,
 				58D2AFA0205588C700435152 /* Piece.swift in Sources */,
 				58D2AFA52055899D00435152 /* Knight.swift in Sources */,

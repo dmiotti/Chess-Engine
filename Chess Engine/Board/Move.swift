@@ -26,7 +26,7 @@ open class Move {
     }
     
     open class AttackMove: Move {
-        open let attackedPiece: Piece
+        public let attackedPiece: Piece
         
         public init(board: Board, piece: Piece, destinationCoordinate: Coordinate, attackedPiece: Piece) {
             self.attackedPiece = attackedPiece
