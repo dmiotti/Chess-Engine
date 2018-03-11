@@ -1,5 +1,5 @@
 //
-//  Console.IO.swift
+//  ConsoleIO.swift
 //  Chess Engine
 //
 //  Created by David Miotti on 11/03/2018.

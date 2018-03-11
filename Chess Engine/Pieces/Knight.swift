@@ -11,6 +11,10 @@ import Foundation
 final public class Knight: Piece {
     private static let candidateMoveCoordinateOffsets: [Coordinate] = [ -17, -15, -10, -6,  6, 10, 15, 17 ]
     
+    convenience init(position: Coordinate, alliance: Alliance) {
+        self.init(position: position, alliance: alliance)
+    }
+    
     public override func calculateLegalMoves(board: Board) -> [Move] {
         return Knight.candidateMoveCoordinateOffsets.flatMap {
             let candidate: Coordinate = position + $0

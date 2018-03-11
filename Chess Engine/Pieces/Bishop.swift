@@ -11,11 +11,15 @@ import Foundation
 final public class Bishop: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -9, -7, -7, -9 ]
     
+    convenience init(position: Coordinate, alliance: Alliance) {
+        self.init(position: position, alliance: alliance)
+    }
+    
     public override func calculateLegalMoves(board: Board) -> [Move] {
         var legalMoves = [Move]()
         
         Bishop.candidateMoveVectorCoordinates.forEach {
-            var candidate = position
+            var candidate: Coordinate = position
             
             while BoardUtils.isValidTileCoordinate(candidate) {
                 let isFirstColumnExclusion = Bishop.isFirstColumnExclusion(current: position, candidate: $0)

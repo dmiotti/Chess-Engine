@@ -14,6 +14,9 @@ open class BoardUtils {
     static public let seventhColumn = initColumn(6)
     static public let eighthColumn = initColumn(7)
     
+    static public let secondRow = initColumn(7)
+    static public let seventhRow = initColumn(7)
+    
     static public let numberOfTiles = 64
     static public let numberOfTilesPerRow = 8
     

@@ -18,6 +18,7 @@
 		58D2AFA92055978800435152 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA82055978800435152 /* Bishop.swift */; };
 		58D2AFAB20559B7700435152 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFAA20559B7700435152 /* Rook.swift */; };
 		58D2AFAD20559CB000435152 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFAC20559CB000435152 /* Queen.swift */; };
+		58D2AFAF2055A51900435152 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFAE2055A51900435152 /* Pawn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		58D2AFA82055978800435152 /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
 		58D2AFAA20559B7700435152 /* Rook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rook.swift; sourceTree = "<group>"; };
 		58D2AFAC20559CB000435152 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		58D2AFAE2055A51900435152 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				58D2AFA82055978800435152 /* Bishop.swift */,
 				58D2AFAA20559B7700435152 /* Rook.swift */,
 				58D2AFAC20559CB000435152 /* Queen.swift */,
+				58D2AFAE2055A51900435152 /* Pawn.swift */,
 			);
 			path = Pieces;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				58D2AFA3205588C700435152 /* Tile.swift in Sources */,
 				58D2AFAB20559B7700435152 /* Rook.swift in Sources */,
 				58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */,
+				58D2AFAF2055A51900435152 /* Pawn.swift in Sources */,
 				58D2AFA92055978800435152 /* Bishop.swift in Sources */,
 				58D2AF9320557EDD00435152 /* ConsoleIO.swift in Sources */,
 				58D2AFA0205588C700435152 /* Piece.swift in Sources */,

@@ -8,18 +8,42 @@
 
 import Foundation
 
-public enum Alliance {
-    case white
-    case black
-}
-
 open class Piece {
+    public enum Direction: Int {
+        case forward = 1
+        case backward = -1
+    }
+    
+    public enum Alliance {
+        case white
+        case black
+        
+        public var direction: Direction {
+            switch self {
+            case .black:
+                return .backward
+            case .white:
+                return .forward
+            }
+        }
+        
+        var isWhite: Bool {
+            return self == .white
+        }
+        
+        var isBack: Bool {
+            return self == .black
+        }
+    }
+    
     open let position: Coordinate
     open let alliance: Alliance
+    open let isFirstMove: Bool
     
-    init(position: Coordinate, alliance: Alliance) {
+    private init(position: Coordinate, alliance: Alliance) {
         self.position = position
         self.alliance = alliance
+        self.isFirstMove = true
     }
     
     open func calculateLegalMoves(board: Board) -> [Move] {

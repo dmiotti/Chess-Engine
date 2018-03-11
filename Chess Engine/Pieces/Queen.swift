@@ -11,11 +11,15 @@ import Foundation
 final public class Queen: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -9, -8, -7, -1,  1,  7,  8,  9 ]
     
+    convenience init(position: Coordinate, alliance: Alliance) {
+        self.init(position: position, alliance: alliance)
+    }
+    
     public override func calculateLegalMoves(board: Board) -> [Move] {
         var legalMoves = [Move]()
         
         Queen.candidateMoveVectorCoordinates.forEach {
-            var candidate = position
+            var candidate: Coordinate = position
             
             while BoardUtils.isValidTileCoordinate(candidate) {
                 let isFirstColumnExclusion = Queen.isFirstColumnExclusion(current: position, candidate: $0)

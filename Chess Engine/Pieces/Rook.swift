@@ -11,11 +11,15 @@ import Foundation
 final public class Rook: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -8, -1, 1, 8 ]
     
+    convenience init(position: Coordinate, alliance: Alliance) {
+        self.init(position: position, alliance: alliance)
+    }
+    
     public override func calculateLegalMoves(board: Board) -> [Move] {
         var legalMoves = [Move]()
         
         Rook.candidateMoveVectorCoordinates.forEach {
-            var candidate = position
+            var candidate: Coordinate = position
             
             while BoardUtils.isValidTileCoordinate(candidate) {
                 let isFirstColumnExclusion = Rook.isFirstColumnExclusion(current: position, candidate: $0)
