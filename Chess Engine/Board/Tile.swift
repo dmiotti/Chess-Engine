@@ -8,7 +8,7 @@
 
 public typealias Coordinate = Int
 
-open class Tile {
+open class Tile: CustomStringConvertible {
     private static var emptyTilesCache: [Int: EmptyTile] = {
         var emptyTiles = [Int: EmptyTile]()
         (0..<BoardUtils.numberOfTiles).forEach {
@@ -21,6 +21,10 @@ open class Tile {
     
     private init(coordinate: Coordinate) {
         self.coordinate = coordinate
+    }
+
+    public var description: String {
+        return "Tile"
     }
     
     public static func createTile(coordinate: Coordinate, piece: Piece?) -> Tile {
@@ -50,6 +54,10 @@ open class Tile {
         public override var piece: Piece? {
             return nil
         }
+
+        override var description: String {
+            return "-"
+        }
     }
     
     final private class OccupiedTile: Tile {
@@ -66,6 +74,13 @@ open class Tile {
         
         public override var piece: Piece? {
             return pieceOnTile
+        }
+
+        override var description: String {
+            if pieceOnTile.alliance.isBack {
+                return pieceOnTile.description.lowercased()
+            }
+            return pieceOnTile.description.uppercased()
         }
     }
 }

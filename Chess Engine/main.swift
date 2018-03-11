@@ -8,5 +8,5 @@
 
 import Foundation
 
-let console = ConsoleIO()
-console.printUsage()
+let board = Board.createStandardBoard()
+print(board)

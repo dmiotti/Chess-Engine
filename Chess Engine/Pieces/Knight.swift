@@ -52,4 +52,8 @@ final public class Knight: Piece {
     private static func isEighthColumnExclusion(current position: Coordinate, candidate offset: Coordinate) -> Bool {
         return BoardUtils.eighthColumn[position] && [-15, -6, 10, 17].contains(offset)
     }
+
+    public override var description: String {
+        return PieceType.Knight.description
+    }
 }

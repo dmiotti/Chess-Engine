@@ -52,4 +52,8 @@ final public class Queen: Piece {
     private static func isEighthColumnExclusion(current position: Coordinate, candidate offset: Int) -> Bool {
         return BoardUtils.eighthColumn[position] && [-7, 1, 9].contains(offset)
     }
+
+    public override var description: String {
+        return PieceType.Queen.description
+    }
 }

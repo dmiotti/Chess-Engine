@@ -6,7 +6,21 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-open class Piece {
+open class Piece: CustomStringConvertible {
+
+    public enum PieceType: String, CustomStringConvertible {
+        case Pawn   = "p"
+        case Rook   = "r"
+        case Knight = "n"
+        case Bishop = "b"
+        case Queen  = "q"
+        case King   = "k"
+
+        public var description: String {
+            return rawValue
+        }
+    }
+
     public enum Direction: Int {
         case forward = 1
         case backward = -1
@@ -42,6 +56,10 @@ open class Piece {
         self.position = position
         self.alliance = alliance
         self.isFirstMove = true
+    }
+
+    public var description: String {
+        return "X"
     }
     
     open func calculateLegalMoves(board: Board) -> [Move] {

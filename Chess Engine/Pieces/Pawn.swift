@@ -6,14 +6,14 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-final class Pawn: Piece {
+final public class Pawn: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ 8, 16 ]
     
     convenience init(position: Coordinate, alliance: Alliance) {
         self.init(position: position, alliance: alliance)
     }
     
-    override func calculateLegalMoves(board: Board) -> [Move] {
+    override public func calculateLegalMoves(board: Board) -> [Move] {
         return Pawn.candidateMoveVectorCoordinates.flatMap {
             let candidate: Coordinate = position + (alliance.direction.rawValue * $0)
             
@@ -47,5 +47,9 @@ final class Pawn: Piece {
             
             return nil
         }
+    }
+
+    public override var description: String {
+        return PieceType.Pawn.description
     }
 }
