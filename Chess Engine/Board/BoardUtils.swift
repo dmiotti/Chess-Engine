@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 open class BoardUtils {
     static public let firstColumn = initColumn(0)
     static public let secondColumn = initColumn(1)

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 final public class Queen: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -9, -8, -7, -1,  1,  7,  8,  9 ]
     

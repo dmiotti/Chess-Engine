@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 final public class Bishop: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -9, -7, -7, -9 ]
     

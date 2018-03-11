@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 final public class Knight: Piece {
     private static let candidateMoveCoordinateOffsets: [Coordinate] = [ -17, -15, -10, -6,  6, 10, 15, 17 ]
     

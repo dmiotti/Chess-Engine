@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 open class Piece {
     public enum Direction: Int {
         case forward = 1

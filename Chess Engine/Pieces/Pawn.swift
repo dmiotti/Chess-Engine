@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 final class Pawn: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ 8, 16 ]
     
@@ -33,6 +31,10 @@ final class Pawn: Piece {
                 if !board[behindCandidateDestinationCoordinate].isOccupied, !board[candidate].isOccupied {
                     return Move.MajorMove(board: board, piece: self, destinationCoordinate: candidate)
                 }
+            } else if $0 == 7 {
+                
+            } else if $0 == 9 {
+                
             }
             
             return nil

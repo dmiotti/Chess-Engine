@@ -6,8 +6,6 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-import Foundation
-
 final public class Rook: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -8, -1, 1, 8 ]
     
