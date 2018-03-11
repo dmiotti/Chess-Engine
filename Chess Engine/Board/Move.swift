@@ -7,7 +7,7 @@
 //
 
 /// Represent a move
-open class Move {
+open class Move: Equatable {
     /// The board
     public let board: Board
     /// The piece
@@ -42,5 +42,9 @@ open class Move {
             self.attackedPiece = attackedPiece
             super.init(board: board, piece: piece, destinationCoordinate: destinationCoordinate)
         }
+    }
+
+    public static func ==(lhs: Move, rhs: Move) -> Bool {
+        return lhs.piece == rhs.piece && lhs.destinationCoordinate == rhs.destinationCoordinate
     }
 }

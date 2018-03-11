@@ -21,6 +21,7 @@
 		58D2B0232055DD2300435152 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2B0172055DD2300435152 /* Board.swift */; };
 		58D2B0242055DD2300435152 /* BoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2B0182055DD2300435152 /* BoardUtils.swift */; };
 		58D2B0252055DD2300435152 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2B0192055DD2300435152 /* Tile.swift */; };
+		58D2B0272055DD5400435152 /* MoveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2B0262055DD5400435152 /* MoveTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		58D2B0172055DD2300435152 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		58D2B0182055DD2300435152 /* BoardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardUtils.swift; sourceTree = "<group>"; };
 		58D2B0192055DD2300435152 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		58D2B0262055DD5400435152 /* MoveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				58D2B0172055DD2300435152 /* Board.swift */,
 				58D2B0192055DD2300435152 /* Tile.swift */,
 				58D2B0162055DD2300435152 /* Move.swift */,
+				58D2B0262055DD5400435152 /* MoveTransition.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				58D2B0242055DD2300435152 /* BoardUtils.swift in Sources */,
 				58D2B0252055DD2300435152 /* Tile.swift in Sources */,
 				58D2B0232055DD2300435152 /* Board.swift in Sources */,
+				58D2B0272055DD5400435152 /* MoveTransition.swift in Sources */,
 				58D2B0202055DD2300435152 /* King.swift in Sources */,
 				58D2AF8A20557E3B00435152 /* main.swift in Sources */,
 				58D2B01E2055DD2300435152 /* Queen.swift in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-open class Piece: CustomStringConvertible {
+open class Piece: CustomStringConvertible, Equatable {
 
     public enum PieceType: String, CustomStringConvertible {
         case pawn   = "p"
@@ -70,5 +70,9 @@ open class Piece: CustomStringConvertible {
     /// - Returns: An array of moves
     open func calculateLegalMoves(board: Board) -> [Move] {
         fatalError("You must inherit from Piece class")
+    }
+
+    public static func ==(lhs: Piece, rhs: Piece) -> Bool {
+        return lhs.alliance == rhs.alliance && lhs.pieceType == rhs.pieceType && lhs.position == rhs.position
     }
 }

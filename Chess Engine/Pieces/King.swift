@@ -25,6 +25,7 @@ final public class King: Piece {
 
             let tile = board[candidate]
             if !tile.isOccupied {
+                // TODO: Check if the destination position is defended by an opponent piece
                 return Move.MajorMove(board: board, piece: self, destinationCoordinate: candidate)
             }
             if let piece = tile.piece, alliance != piece.alliance {
