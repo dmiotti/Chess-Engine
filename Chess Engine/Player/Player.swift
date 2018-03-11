@@ -61,7 +61,21 @@ open class Player {
     /// - Parameter move: The move to make
     /// - Returns: A move transition
     private func makeMove(_ move: Move) -> MoveTransition {
-        fatalError("Not implemented yet!")
+        if !isLegal(move: move) {
+            return MoveTransition(board: board, move: move, moveStatus: .illegalMove)
+        }
+
+        let transitionBoard = move.execute()
+
+        let kingAttacks = Player.calculateAttacksOnTile(
+            position: transitionBoard.currentPlayer.opponent.king.position,
+            opponentMoves: transitionBoard.currentPlayer.legalMoves)
+
+        if !kingAttacks.isEmpty {
+            return MoveTransition(board: board, move: move, moveStatus: .leavesPlayerInCheck)
+        }
+
+        return MoveTransition(board: transitionBoard, move: move, moveStatus: .done)
     }
 
     /// Check if the player has escape moves

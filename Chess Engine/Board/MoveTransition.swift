@@ -9,6 +9,7 @@
 public enum MoveStatus {
     case done
     case illegalMove
+    case leavesPlayerInCheck
 }
 
 open class MoveTransition {

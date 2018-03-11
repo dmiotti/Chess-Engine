@@ -14,6 +14,10 @@ open class Move: Equatable {
     public let piece: Piece
     /// The destination position
     public let destinationCoordinate: Coordinate
+
+    public func execute() -> Board {
+        fatalError("Not implemeted yet!")
+    }
     
     /// Initialize a new move instance
     ///

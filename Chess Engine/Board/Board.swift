@@ -16,6 +16,7 @@ open class Board: CustomStringConvertible {
     open let blackPieces: [Piece]
     open var whitePlayer: Player!
     open var blackPlayer: Player!
+    open var currentPlayer: Player!
 
     private init(builder: Builder) {
         gameBoard = Board.createGameBoard(builder: builder)
@@ -26,6 +27,7 @@ open class Board: CustomStringConvertible {
         let blackLegalMoves = calculateLegalMoves(pieces: blackPieces)
         whitePlayer = Player(board: self, alliance: .white, legalMoves: whiteLegalMoves, opponentMoves: blackLegalMoves)
         blackPlayer = Player(board: self, alliance: .black, legalMoves: blackLegalMoves, opponentMoves: whiteLegalMoves)
+        currentPlayer = builder.nextMoveMaker.isWhite ? whitePlayer : blackPlayer
     }
 
     public var description: String {
