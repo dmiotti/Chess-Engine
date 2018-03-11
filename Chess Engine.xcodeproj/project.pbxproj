@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		58D2AF8A20557E3B00435152 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF8920557E3B00435152 /* main.swift */; };
+		58D2AF9320557EDD00435152 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9220557EDD00435152 /* ConsoleIO.swift */; };
+		58D2AFA0205588C700435152 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9B205588C700435152 /* Piece.swift */; };
+		58D2AFA1205588C700435152 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9D205588C700435152 /* Move.swift */; };
+		58D2AFA2205588C700435152 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9E205588C700435152 /* Board.swift */; };
+		58D2AFA3205588C700435152 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AF9F205588C700435152 /* Tile.swift */; };
+		58D2AFA52055899D00435152 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA42055899D00435152 /* Knight.swift */; };
+		58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA620558DC000435152 /* BoardUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		58D2AF8620557E3B00435152 /* Chess Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Chess Engine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D2AF8920557E3B00435152 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		58D2AF9220557EDD00435152 /* ConsoleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
+		58D2AF9B205588C700435152 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		58D2AF9D205588C700435152 /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		58D2AF9E205588C700435152 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		58D2AF9F205588C700435152 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		58D2AFA42055899D00435152 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		58D2AFA620558DC000435152 /* BoardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +71,32 @@
 		58D2AF8820557E3B00435152 /* Chess Engine */ = {
 			isa = PBXGroup;
 			children = (
+				58D2AF9C205588C700435152 /* Board */,
+				58D2AF9A205588C700435152 /* Pieces */,
+				58D2AF9220557EDD00435152 /* ConsoleIO.swift */,
 				58D2AF8920557E3B00435152 /* main.swift */,
 			);
 			path = "Chess Engine";
+			sourceTree = "<group>";
+		};
+		58D2AF9A205588C700435152 /* Pieces */ = {
+			isa = PBXGroup;
+			children = (
+				58D2AF9B205588C700435152 /* Piece.swift */,
+				58D2AFA42055899D00435152 /* Knight.swift */,
+			);
+			path = Pieces;
+			sourceTree = "<group>";
+		};
+		58D2AF9C205588C700435152 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				58D2AF9E205588C700435152 /* Board.swift */,
+				58D2AFA620558DC000435152 /* BoardUtils.swift */,
+				58D2AF9D205588C700435152 /* Move.swift */,
+				58D2AF9F205588C700435152 /* Tile.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D2AFA1205588C700435152 /* Move.swift in Sources */,
 				58D2AF8A20557E3B00435152 /* main.swift in Sources */,
+				58D2AFA2205588C700435152 /* Board.swift in Sources */,
+				58D2AFA3205588C700435152 /* Tile.swift in Sources */,
+				58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */,
+				58D2AF9320557EDD00435152 /* ConsoleIO.swift in Sources */,
+				58D2AFA0205588C700435152 /* Piece.swift in Sources */,
+				58D2AFA52055899D00435152 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
