@@ -6,13 +6,15 @@
 //  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
-enum MoveStatus {
+public enum MoveStatus {
+    case done
+    case illegalMove
 }
 
 open class MoveTransition {
-    let transitionBoard: Board
-    let move: Move
-    let moveStatus: MoveStatus
+    public let transitionBoard: Board
+    public let move: Move
+    public let moveStatus: MoveStatus
 
     init(board: Board, move: Move, moveStatus: MoveStatus) {
         self.transitionBoard = board

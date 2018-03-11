@@ -14,24 +14,21 @@ open class Player {
     public let opponentMoves: [Move]
     public let alliance: Piece.Alliance
     public let isInCheck: Bool
-    public let isInCheckMate: Bool
-    public let isInStaleMate: Bool
-    public let isCastled: Bool
 
     init(board: Board, alliance: Piece.Alliance, legalMoves: [Move], opponentMoves: [Move]) {
         self.board = board
         self.legalMoves = legalMoves
         self.opponentMoves = opponentMoves
         self.alliance = alliance
-        self.king = board.blackPieces.first { $0 is King } as! King
-        let isInCheck = !Player.calculateAttacksOnTile(position: king.position, opponentMoves: opponentMoves).isEmpty
-        self.isInCheck = isInCheck
-        let isInStaleMate = legalMoves.filter { $0.piece is King }.count == 0
-        self.isInStaleMate = isInStaleMate && !isInCheck
-        self.isInCheckMate = isInCheck && isInStaleMate
-        self.isCastled = false
+        if alliance == .white {
+            self.king = board.whitePieces.first { $0 is King } as! King
+        } else {
+            self.king = board.blackPieces.first { $0 is King } as! King
+        }
+        self.isInCheck = !Player.calculateAttacksOnTile(position: king.position, opponentMoves: opponentMoves).isEmpty
     }
 
+    /// Get the opponent player
     public var opponent: Player {
         switch alliance {
         case .black:
@@ -41,10 +38,51 @@ open class Player {
         }
     }
 
+    /// Check if the move provided is a legal move
+    ///
+    /// - Parameter move: The move to check
+    /// - Returns: `true` if the move is valid. `false` otherwise.
     public func isLegal(move: Move) -> Bool {
         return legalMoves.contains(move)
     }
 
+    /// Returns true if the player is in checkmate
+    public var isInCheckMate: Bool {
+        return isInCheck && !hasEscapeMoves()
+    }
+
+    /// Returns true if the player is in stalemate
+    public var isInStaleMate: Bool {
+        return !isInCheck && !hasEscapeMoves()
+    }
+
+    /// Make a move in board
+    ///
+    /// - Parameter move: The move to make
+    /// - Returns: A move transition
+    private func makeMove(_ move: Move) -> MoveTransition {
+        fatalError("Not implemented yet!")
+    }
+
+    /// Check if the player has escape moves
+    ///
+    /// - Returns: `true` if the player can make a move. `false` otherwise.
+    private func hasEscapeMoves() -> Bool {
+        for move in legalMoves {
+            let transition = makeMove(move)
+            if transition.moveStatus == .done {
+                return true
+            }
+        }
+        return false
+    }
+
+    /// Get all moves that attack a particular tile
+    ///
+    /// - Parameters:
+    ///   - position: The position to check
+    ///   - opponentMoves: Opponents moves
+    /// - Returns: Move that attack the provided position on the board
     private static func calculateAttacksOnTile(position: Coordinate, opponentMoves: [Move]) -> [Move] {
         return opponentMoves.filter { $0.destinationCoordinate == position }
     }
