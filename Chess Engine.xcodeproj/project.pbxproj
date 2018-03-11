@@ -16,6 +16,7 @@
 		58D2AFA52055899D00435152 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA42055899D00435152 /* Knight.swift */; };
 		58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA620558DC000435152 /* BoardUtils.swift */; };
 		58D2AFA92055978800435152 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFA82055978800435152 /* Bishop.swift */; };
+		58D2AFAB20559B7700435152 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2AFAA20559B7700435152 /* Rook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		58D2AFA42055899D00435152 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
 		58D2AFA620558DC000435152 /* BoardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUtils.swift; sourceTree = "<group>"; };
 		58D2AFA82055978800435152 /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
+		58D2AFAA20559B7700435152 /* Rook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				58D2AF9B205588C700435152 /* Piece.swift */,
 				58D2AFA42055899D00435152 /* Knight.swift */,
 				58D2AFA82055978800435152 /* Bishop.swift */,
+				58D2AFAA20559B7700435152 /* Rook.swift */,
 			);
 			path = Pieces;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				58D2AF8A20557E3B00435152 /* main.swift in Sources */,
 				58D2AFA2205588C700435152 /* Board.swift in Sources */,
 				58D2AFA3205588C700435152 /* Tile.swift in Sources */,
+				58D2AFAB20559B7700435152 /* Rook.swift in Sources */,
 				58D2AFA720558DC000435152 /* BoardUtils.swift in Sources */,
 				58D2AFA92055978800435152 /* Bishop.swift in Sources */,
 				58D2AF9320557EDD00435152 /* ConsoleIO.swift in Sources */,
