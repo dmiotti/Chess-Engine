@@ -8,9 +8,9 @@
 
 final public class Knight: Piece {
     private static let candidateMoveCoordinateOffsets: [Coordinate] = [ -17, -15, -10, -6,  6, 10, 15, 17 ]
-    
-    convenience init(position: Coordinate, alliance: Alliance) {
-        self.init(position: position, alliance: alliance)
+
+    init(position: Coordinate, alliance: Alliance) {
+        super.init(position: position, alliance: alliance, pieceType: .knight)
     }
     
     public override func calculateLegalMoves(board: Board) -> [Move] {
@@ -51,9 +51,5 @@ final public class Knight: Piece {
     
     private static func isEighthColumnExclusion(current position: Coordinate, candidate offset: Coordinate) -> Bool {
         return BoardUtils.eighthColumn[position] && [-15, -6, 10, 17].contains(offset)
-    }
-
-    public override var description: String {
-        return PieceType.Knight.description
     }
 }

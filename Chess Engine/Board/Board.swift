@@ -8,64 +8,73 @@
 
 public typealias GameBoard = [Tile]
 
+/// Represent a chess game
 open class Board: CustomStringConvertible {
     open let gameBoard: GameBoard
     open let nextMoveMaker: Piece.Alliance
     open let whitePieces: [Piece]
     open let blackPieces: [Piece]
+    open var whitePlayer: Player!
+    open var blackPlayer: Player!
 
     private init(builder: Builder) {
         gameBoard = Board.createGameBoard(builder: builder)
         nextMoveMaker = builder.nextMoveMaker
         whitePieces = Board.calculateActivePieces(on: gameBoard, for: .white)
         blackPieces = Board.calculateActivePieces(on: gameBoard, for: .black)
-
-        let whiteStandardLegalMoves = calculateLegalMoves(pieces: whitePieces)
-        let blackStandardLegalMoves = calculateLegalMoves(pieces: blackPieces)
+        let whiteLegalMoves = calculateLegalMoves(pieces: whitePieces)
+        let blackLegalMoves = calculateLegalMoves(pieces: blackPieces)
+        whitePlayer = Player(board: self, alliance: .white, legalMoves: whiteLegalMoves, opponentMoves: blackLegalMoves)
+        blackPlayer = Player(board: self, alliance: .black, legalMoves: blackLegalMoves, opponentMoves: whiteLegalMoves)
     }
 
     public var description: String {
         var board = String()
         (0..<BoardUtils.numberOfTiles).forEach {
-            let tileText = prettyPrint(tile: gameBoard[$0])
-            board.append(tileText)
-            if ((i + 1) % BoardUtils.numberOfTilesPerRow) == 0 {
+            board.append(gameBoard[$0].description)
+            if (($0 + 1) % BoardUtils.numberOfTilesPerRow) == 0 {
                 board.append("\n")
             }
         }
         return board
     }
 
-    private func prettyPrint(tile: Tile) -> String {
-        if let piece = tile.piece {
-            if piece.alliance.isWhite {
-                return tile.description.uppercased()
-            }
-            return tile.description.lowercased()
-        }
-        return ""
-    }
-
+    /// Create a chess board from a builder
+    ///
+    /// - Parameter builder: The builder used to create a chess board
+    /// - Returns: The game board `[Tile]`
     private static func createGameBoard(builder: Builder) -> GameBoard {
         var tiles = [Tile]()
         (0..<BoardUtils.numberOfTiles).forEach {
-            tiles[$0] = Tile.createTile(coordinate: $0, piece: builder.config[$0])
+            let tile = Tile.createTile(coordinate: $0, piece: builder.config[$0])
+            tiles.append(tile)
         }
         return tiles
     }
 
+    /// Calculate all active pieces present in a chess board
+    ///
+    /// - Parameters:
+    ///   - gameBoard: The chess board to look for
+    ///   - alliance: The alliance of pieces to return
+    /// - Returns: An array of pieces present in the chess board
     private static func calculateActivePieces(on gameBoard: GameBoard, for alliance: Piece.Alliance) -> [Piece] {
         return gameBoard.flatMap { $0.piece }.filter { $0.alliance == alliance }
     }
 
+    /// Calculate all legal moves of provided pieces
+    ///
+    /// - Parameter pieces: Pieces to calculate legal move
+    /// - Returns: An array of moves
     private func calculateLegalMoves(pieces: [Piece]) -> [Move] {
         return pieces.flatMap { $0.calculateLegalMoves(board: self) }
     }
 
-    private static func createStandardBoard() -> Board {
-        let builder = Builder()
-
-        builder.setPiece(Rook(position: 0, alliance: .black))
+    /// Create a standard chess board
+    ///
+    /// - Returns: A chess board filled with initial position
+    public static func createStandardBoard() -> Board {
+        return Builder().setPiece(Rook(position: 0, alliance: .black))
             .setPiece(Knight(position: 1, alliance: .black))
             .setPiece(Bishop(position: 2, alliance: .black))
             .setPiece(Queen(position: 3, alliance: .black))
@@ -103,15 +112,19 @@ open class Board: CustomStringConvertible {
 
             .setMoveMaker(.white)
 
-        return builder.build()
+            .build()
     }
 
+    /// Get a tile at coordinate
+    ///
+    /// - Parameter coordinate: The desired coordinate
     subscript(coordinate: Coordinate) -> Tile {
         get {
             return gameBoard[coordinate]
         }
     }
 
+    /// Helper to create a chess board
     open class Builder {
         var config = [Int: Piece]()
         var nextMoveMaker = Piece.Alliance.white

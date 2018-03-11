@@ -9,12 +9,12 @@
 open class Piece: CustomStringConvertible {
 
     public enum PieceType: String, CustomStringConvertible {
-        case Pawn   = "p"
-        case Rook   = "r"
-        case Knight = "n"
-        case Bishop = "b"
-        case Queen  = "q"
-        case King   = "k"
+        case pawn   = "p"
+        case rook   = "r"
+        case knight = "n"
+        case bishop = "b"
+        case queen  = "q"
+        case king   = "k"
 
         public var description: String {
             return rawValue
@@ -51,17 +51,23 @@ open class Piece: CustomStringConvertible {
     open let position: Coordinate
     open let alliance: Alliance
     open let isFirstMove: Bool
+    open let pieceType: PieceType
     
-    private init(position: Coordinate, alliance: Alliance) {
+    init(position: Coordinate, alliance: Alliance, pieceType: PieceType) {
         self.position = position
         self.alliance = alliance
         self.isFirstMove = true
+        self.pieceType = pieceType
     }
 
     public var description: String {
-        return "X"
+        return pieceType.description
     }
     
+    /// Calculate all legals moves for the current piece. This method must be overrided by a concrete piece.
+    ///
+    /// - Parameter board: The board the piece is
+    /// - Returns: An array of moves
     open func calculateLegalMoves(board: Board) -> [Move] {
         fatalError("You must inherit from Piece class")
     }

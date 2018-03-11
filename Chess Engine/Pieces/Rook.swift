@@ -8,9 +8,9 @@
 
 final public class Rook: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -8, -1, 1, 8 ]
-    
-    convenience init(position: Coordinate, alliance: Alliance) {
-        self.init(position: position, alliance: alliance)
+
+    init(position: Coordinate, alliance: Alliance) {
+        super.init(position: position, alliance: alliance, pieceType: .rook)
     }
 
     public override func calculateLegalMoves(board: Board) -> [Move] {
@@ -51,9 +51,5 @@ final public class Rook: Piece {
     
     private static func isEighthColumnExclusion(current position: Coordinate, candidate offset: Int) -> Bool {
         return BoardUtils.eighthColumn[position] && offset == 1
-    }
-
-    public override var description: String {
-        return PieceType.Rook.description
     }
 }

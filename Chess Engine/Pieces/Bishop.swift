@@ -8,9 +8,9 @@
 
 final public class Bishop: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ -9, -7, -7, -9 ]
-    
-    convenience init(position: Coordinate, alliance: Alliance) {
-        self.init(position: position, alliance: alliance)
+
+    init(position: Coordinate, alliance: Alliance) {
+        super.init(position: position, alliance: alliance, pieceType: .bishop)
     }
     
     public override func calculateLegalMoves(board: Board) -> [Move] {
@@ -51,9 +51,5 @@ final public class Bishop: Piece {
     
     private static func isEighthColumnExclusion(current position: Coordinate, candidate offset: Int) -> Bool {
         return BoardUtils.eighthColumn[position] && [-7, 9].contains(offset)
-    }
-
-    public override var description: String {
-        return PieceType.Bishop.description
     }
 }

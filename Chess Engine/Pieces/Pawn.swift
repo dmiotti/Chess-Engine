@@ -8,9 +8,9 @@
 
 final public class Pawn: Piece {
     private static let candidateMoveVectorCoordinates: [Coordinate] = [ 8, 16 ]
-    
-    convenience init(position: Coordinate, alliance: Alliance) {
-        self.init(position: position, alliance: alliance)
+
+    init(position: Coordinate, alliance: Alliance) {
+        super.init(position: position, alliance: alliance, pieceType: .pawn)
     }
     
     override public func calculateLegalMoves(board: Board) -> [Move] {
@@ -47,9 +47,5 @@ final public class Pawn: Piece {
             
             return nil
         }
-    }
-
-    public override var description: String {
-        return PieceType.Pawn.description
     }
 }
