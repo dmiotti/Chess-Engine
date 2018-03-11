@@ -31,10 +31,18 @@ final class Pawn: Piece {
                 if !board[behindCandidateDestinationCoordinate].isOccupied, !board[candidate].isOccupied {
                     return Move.MajorMove(board: board, piece: self, destinationCoordinate: candidate)
                 }
-            } else if $0 == 7 {
-                
-            } else if $0 == 9 {
-                
+            } else if $0 == 7 && ((BoardUtils.eighthColumn[position] && alliance.isWhite) || (BoardUtils.firstColumn[position] && alliance.isBack)) {
+                let tile = board[candidate]
+                if tile.isOccupied, let piece = tile.piece {
+                    if piece.alliance != alliance {
+                        // TODO: Add an attack move
+                        return Move.AttackMove(board: board, piece: self, destinationCoordinate: candidate, attackedPiece: piece)
+                    }
+                }
+            } else if $0 == 9 && ((BoardUtils.firstColumn[position] && alliance.isWhite) || (BoardUtils.eighthColumn[position] && alliance.isBack)) {
+                if let pieceOnCandidate = board[candidate].piece, alliance != pieceOnCandidate.alliance {
+                    return Move.MajorMove(board: board, piece: self, destinationCoordinate: candidate)
+                }
             }
             
             return nil
